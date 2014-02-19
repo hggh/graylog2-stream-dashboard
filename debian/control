@@ -1,0 +1,19 @@
+Source: graylog2-stream-dashboard
+Section: utils
+Priority: optional
+Maintainer: Jonas Genannt <jonas.genannt@capi2name.de>
+Build-Depends: debhelper (>= 8)
+Standards-Version: 3.9.5
+Homepage: http://www.graylog2.org
+Vcs-Git: https://github.com/hggh/graylog2-stream-dashboard.git
+Vcs-Browser: https://github.com/hggh/graylog2-stream-dashboard/
+
+Package: graylog2-stream-dashboard
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: graylog2-server, graylog2-web
+Description: Graylog2 Loggingframework - Stream Dashboard
+ Graylog2 is an open source syslog implementation that stores your logs
+ in ElasticSearch.
+ .
+ This package contains the Graylog2 Stream Dashboard.
