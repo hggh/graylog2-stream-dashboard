@@ -1,0 +1,31 @@
+<div class="row row-offcanvas row-offcanvas-right" ng-hide="noConnection">
+	<div class="boxed col-xs-12 col-sm-12 messages-container">
+		<p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+		</p>
+		<h3>
+			&raquo;{{stream.title}}&laquo;
+			<small>This stream is processing {{streamThroughput}} messages per second.</small>
+		</h3>
+
+		<div ng-repeat="streamAlert in streamAlerts|orderBy:triggered_at" class="alert alert-danger stream-alert">
+
+			<span class="glyphicon glyphicon-fire"></span> <strong>Alert:</strong> {{streamAlert}}
+		</div>
+
+		<div class="messagelist" infinite-scroll="increaseLimit()" infinite-scroll-distance="3">
+			<table class="table table-striped">
+				<tr>
+					<th style="width: 160px;">Timestamp</th>
+					<th style="width: 210px;">Source</th>
+					<th>Message</th>
+				</tr>
+				<tr ng-repeat="message in messages|limitTo:limit">
+					<td>{{message.timestamp}}</td>
+					<td>{{message.source}}</td>
+					<td>{{message.message}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
